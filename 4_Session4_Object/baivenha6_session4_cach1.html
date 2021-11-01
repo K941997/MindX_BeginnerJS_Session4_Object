@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //Bài 6:
+        learningTasks =  [
+            {
+                name: 'HTML',
+                complete: 'false',
+            },
+            {
+                name: 'CSS',
+                complete: 'false',  
+            },
+            {
+                name: 'Basics of Javascript',
+                complete: 'false',
+            },
+            {
+                name: 'Node Package Manager (npm)',
+                complete: 'false',
+            },
+            {
+                name: 'Git',
+                complete: 'false',
+            },
+        ];
+
+
+        //6.1 -> 6.4: Hiện, Thêm, Sửa, Xóa:
+        
+        //Cách 1:
+        console.log('Hi there, this is your learning tasks to front-end developer career: ');
+        for (let i = 0; i < learningTasks.length; i++){
+            console.log(`${i+1}. ${learningTasks[i].name}`);
+            console.log(`   Complete: ${learningTasks[i].complete}`);
+        }
+        console.log(`--------------------------`)
+
+        
+        let nhap;
+
+        while(true){
+
+            nhap = prompt ('Enter ur command (New, Delete, Update, Complete: ');
+
+            if (nhap === 'new'){
+                var nhapNewTaskValue = prompt('Enter new task: ');
+
+                console.log('Hi there, this is your learning tasks to front-end developer career: ');
+    
+                learningTasks.push({
+                    name:nhapNewTaskValue,
+                    complete:'false',
+                });
+
+                for(let i = 0; i < learningTasks.length; i++){
+                    console.log(`${i+1}. ${learningTasks[i].name}`);
+                    console.log(`   Complete: ${learningTasks[i].complete}`);
+                }
+        
+                break;
+            }
+
+            else if (nhap === 'update'){
+
+                //     //Cách 2:
+                // var nhapPositioni = prompt('Enter position: ');
+                // var updateValue = prompt('Enter new value: ');
+
+                // learningTasks[nhapPositioni].name = updateValue;
+
+                    //Cách 1:
+                var nhapPositioni = prompt('Enter position');
+
+                for (let i = 0; i < learningTasks.length; i++){
+                        if (learningTasks[nhapPositioni] === learningTasks[i+1]){
+                            var nhapNewName =  prompt('Enter new name: ');
+                            learningTasks[i].name = nhapNewName;
+                        }
+                        console.log(`${i+1}. ${learningTasks[i].name}`);
+                        console.log(`   Complete: ${learningTasks[i].complete}`);
+                }
+
+                break;
+            }
+
+            else if (nhap === 'complete'){
+
+                var nhapPositioni2 = prompt('Enter position: ');
+
+                    //Cách 1:
+                for (let i = 0; i < learningTasks.length; i++){
+                    if (learningTasks[nhapPositioni2] === learningTasks[i+1]){
+                        learningTasks[i].complete = 'true';
+                    }
+                    console.log(`${i+1}. [${learningTasks[i].complete === 'true' ? 'x' : ''}] ${learningTasks[i].name}`);
+                }
+
+                break;
+
+                //     //Cách 2:
+                // learningTasks[nhapPositioni2-1].complete = 'true';
+
+                
+            }
+
+            else if (nhap === 'delete'){
+
+                var nhapDelete = prompt('Enter position');
+
+                    //Cách 1:
+                for (let i = 0; i < learningTasks.length; i++){
+                    if (learningTasks[nhapDelete] === learningTasks[i+1]){
+                        learningTasks.splice(i, 1);
+
+                    }
+                    console.log(`${i+1}. ${learningTasks[i].name}`);
+                    console.log(`   Complete: ${learningTasks[i].complete}`);
+                }
+
+                break;
+
+                //     //Cách 2:
+                // learningTasks.splice(nhapDelete - 1, 1);
+
+                
+            }
+
+            else {
+                alert('Loi')
+                console.log(`${i+1}. ${learningTasks[i].name}`);
+                console.log(`   Complete: ${learningTasks[i].complete}`);
+                break;
+                
+            }
+
+        }
+
+
+    
+
+    </script>
+</body>
+</html>

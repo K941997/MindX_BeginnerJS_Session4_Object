@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //   //Bài 4: Init, Bài 4.1:
+        // let dictionary = {
+        //     debug: 'The process of figuring out why your program has a certain error and how to fix it',
+        //     done: 'When your task is complete , the only thing  you have to do is to wait for users to use it ',
+        //     defect: 'The formal word for \'error\'',
+        //     pm: 'The short version of PM, the person in charge of the final result of a project',
+        //     ['ui/ux']: 'UI means User Interface, UX means User Exp, are the process',
+
+        // };
+        // console.log(dictionary);
+
+        // while(true){
+        //     alert('Hi there, this is dev dictionary');
+        //     var nhap = prompt('Enter a keyword: ');
+        //     if(dictionary[nhap]){
+        //         alert(`${nhap} \n ${dictionary[nhap]}`);
+        //     }
+        //     else{
+        //         alert(`We could not find your word: ${nhap}`)
+        //     }
+        // }
+
+
+
+        //4.2: Bài tập về Nhập có sẵn, nhập mới, nhập xuất vào object:
+        let dictionary = {
+            debug: 'The process of figuring out why your program has a certain error and how to fix it',
+            done: 'When your task is complete , the only thing  you have to do is to wait for users to use it ',
+            defect: 'The formal word for \'error\'',
+            pm: 'The short version of PM, the person in charge of the final result of a project',
+            ['ui/ux']: 'UI means User Interface, UX means User Exp, are the process',
+        };
+        console.log(dictionary);
+
+        alert('Hi there, this is dev dictionary');
+
+
+        while(true){
+            var nhapKey = prompt('Enter a keyword: ');
+
+            if (dictionary[nhapKey]) {
+                console.log(`${nhapKey} \n ${dictionary[nhapKey]}`);
+                break;
+            }
+            
+            else if (nhapKey === null || nhapKey === undefined || nhapKey === ""){
+                console.log('Chua nhap gi ca');
+                break;
+            }
+
+            else {
+                var nhapNewData = prompt(`We could not find your word: ${nhapKey}, leave your explanation`);
+
+                //Cách 1: Max Nhanhhhhhhhhhhhhhhhhhhhhhh:
+                dictionary[nhapKey] = nhapNewData;
+                
+                // //Cách 2: Dài donggggggggggggggggg:
+                // var nhapNewDataNumber = Number(nhapNewData);
+                // var nhapNewDataString = String(nhapNewData);
+                // if ( nhapNewDataNumber ){
+                //     dictionary[nhapKey] = Number(nhapNewData);
+                // }
+                // else if ( nhapNewDataString ){
+                //     dictionary[nhapKey] = String(nhapNewData);
+                // }
+
+                break;
+            }
+        }
+
+    </script>
+</body>
+</html>

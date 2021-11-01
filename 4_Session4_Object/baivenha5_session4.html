@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+            //Bài 5:
+            let products = {
+                arr: [
+                    {
+                        name: 'Xiaomi portable charger 20000mah',
+                        brand: 'Xiaomi',
+                        price: 428,
+                        color: 'white',
+                        category: 'charger',
+                    },
+                    {
+                        name: 'VSmart Active 1',
+                        brand: 'VSmart',
+                        price: 5487,
+                        color: 'black',
+                        category: 'phone',
+                    },
+                    {
+                        name: 'Iphone X',
+                        brand: 'Apple',
+                        price: 21490,
+                        color: 'gray',
+                        category: 'phone',
+                    },
+                    {
+                        name: 'Samsung Galaxy A9',
+                        brand: 'Samsung',
+                        price: 8490,
+                        color: 'blue',
+                        category: 'phone',
+                    },
+                ]
+            }
+
+
+
+            //5.1: Print name and price and category of all products:
+                //Cách 1: For thường:
+            for ( let i = 0; i < products.arr.length ; i++ ){
+                console.log(`Name: ${products.arr[i].name}`);
+                console.log(`Price: ${products.arr[i].price}`);
+                console.log(`Category: ${products.arr[i].category}`)
+                console.log('---------------')
+            };
+          
+
+
+
+            //5.2: Nhap Position trong Array:
+            for ( let i = 0; i < products.arr.length; i++){
+                console.log(`#${i+1}. ${products.arr[i].name}`);
+                console.log(`    Price: ${products.arr[i].price}`);
+            }
+
+                //Cách 1: while (điều kiện nhapPosition){ break;}
+            var nhapPosition = Number(prompt('Enter product position: '));
+            while(nhapPosition < 1 || nhapPosition > products.arr.length){
+                nhapPosition = Number(prompt('Nhap sai position:'));
+                break;
+            }
+            var product = products.arr[nhapPosition - 1];
+            console.log(`Name: ${product.name}`);
+            console.log(`Brand: ${product.brand}`);
+            console.log(`Price: ${product.price}`);
+            console.log(`Color: ${product.color}`);
+            console.log(`Category: ${product.category}`);
+
+                //Cách 2: while (điều kiện nhapPosition){ break;}
+            var nhapPosition = prompt('Enter product position: ');
+            while(nhapPosition < 1 || nhapPosition > products.arr.length){
+                nhapPosition = Number(prompt('Nhap sai position:'));
+                break;
+            }
+            for ( let i = 0; i < products.arr.length; i++ ){
+                if (products.arr[nhapPosition] === products.arr[i+1]){
+                    console.log(`Name: ${products.arr[i].name}`);
+                    console.log(`Brand: ${products.arr[i].brand}`);
+                    console.log(`Price: ${products.arr[i].price}`);
+                    console.log(`Color: ${products.arr[i].color}`);
+                    console.log(`Category: ${products.arr[i].category}`);
+                }
+            } 
+        
+
+
+            //5.3: Nhap value của category:
+            var nhapValueOfCategory = prompt('Enter your Category: ');
+
+            //Cách 1: Dùng thường: - if (nhapValueOfCategory === products.arr[i].category){}:
+            for (let i = 0; i < products.arr.length; i++){
+                if(products.arr[i].category === nhapValueOfCategory){
+                    console.log(`----------------`)
+                    console.log(`Name: ${products.arr[i].name}`);
+                    console.log(`Price: ${products.arr[i].price}`);
+                    console.log(`Category: ${products.arr[i].category}`)
+                }
+            }
+
+            //Cách 2: Dùng includes: - if (products.arr[i].includes(category)){}:
+            for (let i = 0; i < products.arr.length; i++){
+                if (products.arr[i].category.includes(nhapValueOfCategory)){
+                    console.log(`----------------`)
+                    console.log(`Name: ${products.arr[i].name}`);
+                    console.log(`Price: ${products.arr[i].price}`);
+                    console.log(`Category: ${products.arr[i].category}`)
+
+                }
+            }
+
+
+
+            //5.4: Add Providers to each product and print all the products:
+            for (let i = 0; i < products.arr.length; i++ ){
+                products.arr[0].providers = 'Phukienzerodientuccc';
+                products.arr[1].providers = 'Tgdd Ddghn Vhstore';
+                products.arr[2].providers = 'Tgdd';
+                products.arr[3].providers = 'Tgdd';
+                console.log(`#${i+1}. ${products.arr[i].name}`);
+                console.log(`    Price: ${products.arr[i].price}`);
+                console.log(`    Providers: ${products.arr[i].providers}`);
+            }
+
+            
+            //5.5: Nhap value của provider để tìm products có provider: value:
+            let nhapValueOfProvider = prompt('Enter provider: ');
+            for (let i =0; i < products.arr.length; i++){
+                if (nhapValueProvider === products.arr[i].providers){
+                    console.log(`-------------`);
+                    console.log(`Name: ${products.arr[i].name}`);
+                    console.log(`Brand: ${products.arr[i].brand}`);
+                    console.log(`Price: ${products.arr[i].price}`);
+                    console.log(`Color: ${products.arr[i].color}`);
+                    console.log(`Category: ${products.arr[i].category}`);
+                    console.log(`Providers: ${products.arr[i].providers}`);
+                }
+            }
+
+
+    </script>
+</body>
+</html>
